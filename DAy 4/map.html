@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/staticmap?center=false">
+    </script>
+    <script>
+        function init() {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var coords = position.coords;
+                //设定地图参数，将用户当前地理的经纬度设为地图中心
+                var latlng = new google.maps.Latlng(coords.latitude, coords.longitude);
+                var myOptions = {
+                    zoom: 14,
+                    center: latlng,
+                    mapTypeId: google.maps.mapTypeI.ROADMAP
+                };
+                var map1;
+                map1 = new google.maps.Map(document.getElementById("map "), myOptions);
+                var marker = new google.maps.Marker({
+                    position: latlng,
+                    map: map1
+                });
+                var infowindow = new google.maps.infoWindow({
+                    content: "当前位置 "
+                });
+                infowindow.open(map1, marker);
+            })
+        }
+    </script>
+</head>
+
+<bodyo onload="init() ">
+    <div id="map " style="width: 400px; height:400px; "></div>
+    </body>
+
+</html>

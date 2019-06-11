@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*不同 取值范围 */
+
+@media screen and (max-width:640px) {
+    .dl {
+        width: 100%;
+        height: 800px;
+        background-color: aquamarine;
+    }
+}
+
+@media screen and (min-width:640px) and (max-width:800px) {
+    .dl {
+        width: 100%;
+        height: 800px;
+        background-color: pink;
+    }
+}
+
+@media screen and (min-width:800px) {
+    .dl {
+        width: 100%;
+        height: 800px;
+        background-color: blue;
+    }
+}
