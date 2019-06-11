@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Personal information:</legend>
+            <input type="text"><input type="submit" value="Submit">
+            <input type="button" value="提交">
+            <input type="checkbox" name="name" value="小红">
+            <input type="radio" name="sex" value="male" checked>Male
+        </fieldset>
+    </form>
+
+
+    <form action="/demo/demo_form.asp">
+        <select name="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat" selected>Fiat</option>
+            <!-- 表示选定了这个 -->
+            <option value="audi">Audi</option>
+        </select>
+        <br><br>
+        <input type="submit">
+    </form>
+
+    <form action="/demo/demo_form.asp">
+
+        <input list="browsers" name="browser">
+        <datalist id="browsers">
+            <option value="Internet Explorer">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
+        <input type="submit">
+    </form>
+    <!-- 文本 -->
+    <form>
+        First name:<br>
+        <input type="text" name="firstname">
+        <br> Last name:<br>
+        <input type="text" name="lastname">
+    </form>
+    <!-- 密码 -->
+    <form>
+        User name:<br>
+        <input type="text" name="username">
+        <br> User password:<br>
+        <input type="password" name="psw">
+    </form>
+
+    <form action="/demo/demo_form.asp">
+        <input type="checkbox" name="vehicle" value="Bike">I have a bike
+        <br>
+        <input type="checkbox" name="vehicle" value="Car">I have a car
+        <br><br>
+        <input type="submit">
+    </form>
+
+    <form>
+        Quantity (between 1 and 5):
+        <input type="number" name="quantity" min="1" max="5">
+    </form>
+
+    <form action="/demo/demo_form.asp">
+        生日：
+        <input type="date" name="bday">
+        <input type="submit">
+    </form>
+
+    <form action="action_page.php">
+        Select your favorite color:
+        <input type="color" name="favcolor" value="#ff0000">
+        <input type="submit">
+    </form>
+    <form>
+        <input type="range" name="points" min="0" max="10">
+    </form>
+    <form>
+        Birthday (month and year):
+        <input type="month" name="bdaymonth">
+    </form>
+    <form>
+        Select a time:
+        <input type="time" name="usr_time">
+    </form>
+    <form>
+        Birthday (date and time):
+        <input type="datetime" name="bdaytime">
+    </form>
+    <form>
+        E-mail:
+        <input type="email" name="email">
+    </form>
+    <form action="/demo/demo_form.asp">
+        搜索谷歌：
+        <input type="search" name="googlesearch">
+        <input type="submit">
+    </form>
+    <form>
+        Telephone:
+        <input type="tel" name="usrtel">
+    </form>
+    <form>
+        Add your homepage:
+        <input type="url" name="homepage">
+    </form>
+    <input type="text" name="firstname" value="John" readonly>
+    <!-- readonly 属性规定输入字段为只读（不能修改） -->
+    <input type="text" name="firstname" value="John" disabled>
+    <!-- disabled 属性规定输入字段是禁用的。
+
+    被禁用的元素是不可用和不可点击的。
+
+    被禁用的元素不会被提交。 -->
+    <!-- 
+    autocomplete 属性规定表单或输入字段是否应该自动完成。
+
+    当自动完成开启，浏览器会基于用户之前的输入值自动填写值。 -->
+
+
+    <!-- 如果设置，则 novalidate 规定在提交表单时不对表单数据进行验证。 -->
+
+    First name:<input type="text" name="fname" autofocus>
+
+
+
+    <form action="/example/html5/demo_form.asp" method="get">
+        选择图片：<input type="file" name="img" multiple="multiple" />
+        <input type="submit" />
+    </form>
+    <p>请尝试在浏览文件时选取一个以上的文件。</p>
+    <!-- 
+    pattern 属性规定用于检查 <input> 元素值的正则表达式。
+
+    pattern 属性适用于以下输入类型：text、search、url、tel、email、and password。
+
+    提示：请使用全局的 title 属性对模式进行描述以帮助用户。
+
+    提示：请在我们的 JavaScript 教程中学习更多有关正则表达式的知识。 -->
+
+    <input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code">
+
+    <!-- step 属性规定 <input> 元素的合法数字间隔。 -->
+
+</body>
+
+</html>
