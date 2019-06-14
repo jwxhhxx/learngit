@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+</body>
+<script>
+    // var obj1 = {
+    //     name: '新生',
+    //     age: 19,
+    //     fun: function() {
+    //         //在方法中的this指的就是这个方法的对象
+    //         var s = this.age;
+    //         console.log(s);
+    //     }
+    // }
+    // obj1.fun();
+
+
+    // function f() {
+    //     //指向全局对象
+    //     //this 
+    //     console.log(this);
+    // }
+    // f();
+
+    //this永远指向一个对象
+    //this在什么情况下什么地方指向同一个对象
+
+
+
+    // k = '567';
+
+    // function fun() {
+    //     var k = '89';
+    //     console.log(this.k);
+    // }
+    // var o1 = {
+    //     k: '123',
+    //     f: fun,
+    // }
+    // var o2 = {
+    //     k: '345',
+    //     f: fun,
+    // }
+    // o1.f();
+    // o2.f();
+
+
+    //this运行在哪个对象下，就指向哪个对象，与其他赋值无关
+
+
+    var o1 = {
+        age: 18,
+        fun: function() {
+            console.log(this.age);
+        }
+    }
+
+    var o2 = {
+        age: 16,
+        fun: o1.fun,
+    }
+    o2.fun();
+</script>
+
+</html>

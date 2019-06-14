@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //自变量方式创建数组
+    var a1 = [];
+    var a2 = ['s', 1, 2];
+    console.log(a2);
+
+    //构造函数方式创建数组
+
+    var a3 = new Array(1, 2, '3');
+
+
+    //获取数组长度
+    var l = a3.length;
+
+    //数组里也能有数组,成为多维数组
+    var a4 = [13, 43, 'e'];
+    var a5 = [1, 2, a4, 'd']; //二维数组
+    console.log(a5);
+
+    //遍历数组
+    var a6 = ['q', 's', 'd', 's', 'v'];
+    for (var i = 0; i < 5; i++) {
+        console.log(a6[i]);
+    }
+
+    //将数组中的所有数字相加打印
+    var arr = [41, 12, 55, 86, 23];
+    var n = 0;
+    for (var i = 0; i < arr.length; i++) {
+        n += arr[i];
+
+    }
+    console.log(n);
+
+
+    //请打印出数组中最大的值
+    var arr1 = [12, 32, 2, 13, 3];
+    var n = 0;
+    for (var i = 0; i < arr1.length; i++) {
+        if (n < arr1[i]) {
+            n = arr1[i];
+        }
+    }
+    console.log(n);
+
+    //打印出数组中所有的偶数
+    var arr2 = [1, 2, 35, 12, 58, 45, 11];
+    for (var i = 0; i < arr2.length; i++) {
+        if (arr2[i] % 2 == 0) {
+            console.log(arr2[i]);
+        }
+    }
+
+    //将数组中的元素以|分割为一个字符串
+    var arr3 = [1, 2, 35, 12, 58, 45, 11];
+    var s = '';
+    for (var i = 0; i < arr3.length; i++) {
+        s += arr3[i] + '|';
+    }
+    console.log(s);
+</script>
+
+</html>

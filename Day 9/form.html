@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-1.11.0.min.js"></script>
+
+    <style>
+        textarea {
+            height: 35px;
+        }
+        
+        div {
+            color: red;
+        }
+        
+        fieldset {
+            margin: 0;
+            padding: 0;
+            border-width: 0;
+        }
+        
+        .marked {
+            background-color: yellow;
+            border: 3px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <input type="button" value="input button">
+            <input type="text">
+            <input type="checkbox">
+            <input type="file">
+            <input type="hidden">
+            <input type="image">
+            <input type="password">
+            <input type="radio">
+            <input type="submit">
+            <input type="reset">
+            <select name="" id="">
+            <option value="">option</option>
+           
+              <textarea></textarea>
+              <button></button>
+            </select>
+        </fieldset>
+    </form>
+</body>
+<script>
+    $(function() {
+        var input = $(":input").addClass("marked");
+    })
+</script>
+
+</html>

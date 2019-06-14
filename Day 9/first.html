@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="js/jquery-1.11.0.min.js"></script>
+
+    <style>
+        .sogreen {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>s1</span>
+        <span>s1</span>
+        <span>s1</span>
+    </div>
+
+    <div>
+        <span>s1</span>
+        <span>s1</span>
+        <span>s1</span>
+    </div>
+
+    <div>
+        <span>s1</span>
+        <span>s1</span>
+        <span>s1</span>
+    </div>
+</body>
+
+<script>
+    $(function() {
+        $("div span:last-child").css("text-decoration", "underline").hover(function() {
+            $(this).addClass("sogreen");
+
+
+        }, function() {
+            $(this).removeClass("sogreen");
+        });
+    })
+</script>
+
+</html>

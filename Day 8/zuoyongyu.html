@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // var a = 1;
+    // //函数里面就是局部作用域，外面就是全局作用域
+    // function f1() {
+    //     var a = 2;
+
+    // }
+
+    var f2 = function() {
+        var a = 1;
+        console.log(a);
+    }
+    f2();
+    console.log(a);
+    var a = 2;
+    //变量提升：在代码执行之前，变量以及在编译阶段被声明了 
+    //声明后就是underfined 没有声明就是报错
+
+    //JS代码的运行分为两个阶段
+    //1.解析阶段：语法检查，变量及函数进行声明
+    //2 运行阶段：变量的赋值，代码流程的执行
+
+    var a;
+    console.log(a);
+    a = 2;
+    //只有函数可以制造作用域结构，那么只是代码，就至少有一个作用域
+</script>
+
+</html>

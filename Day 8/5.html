@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //匿名函数，函数本身是没有名字的，所以把函数㢟给变量
+    // var fun = function() {
+    //     console.log(1);
+
+    // }
+    // fun();
+    //也是没有名字的
+    //立即执行函数。自调用匿名函数
+    // (function() {
+    //     alert('nihao');
+    // })();
+
+    //作用域
+    //放置全局变量的污染，封装一个局部作用
+
+    //函数也是一直数据类型
+    // function fun() {
+
+    // }
+    // //function 数据类型 对象（数组、函数）
+    // console.log(typeof fun);
+
+    // function fn(s) {
+    //     console.log(s);
+    // }
+
+    // fn('ssss');
+
+    // function f1(s) {
+
+    //     s();
+    // }
+    // var f2 = function() {
+    //     console.log(222);
+
+    // }
+
+    // f1(f2);
+
+    // //f2函数会被当做值，传入f1函数中
+    // //回调
+    //f1(f2)
+
+    //将函数作为返回值
+
+    function f1() {
+        var a = 10;
+        var f2 = function() {
+            alert(2);
+        }
+        return f2;
+    }
+    //闭包
+    var k = f1();
+    k();
+</script>
+
+</html>
