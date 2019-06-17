@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        a {
+            text-decoration-line: none;
+        }
+        
+        .nav1 {
+            height: 50px;
+            width: 100%;
+            box-shadow: 0 2px 0 darkgrey;
+        }
+        
+        .nav1_img {
+            height: 45px;
+            width: 45px;
+            border-radius: 50px;
+            overflow: hidden;
+            float: left;
+            display: block;
+            margin-left: 50px
+        }
+        
+        .nav1_name {
+            float: left;
+            margin-left: 10px;
+            line-height: 50px;
+            font-size: 20px;
+            color: black;
+            font-family: Verdana, Geneva, Tahoma, sans-serif
+        }
+        
+        .nav1_li {
+            float: left;
+            margin-left: 30px;
+            list-style: none;
+            line-height: 50px;
+            color: grey;
+        }
+        
+        .nav1_li a:hover {
+            color: aquamarine;
+        }
+        
+        #li1 {
+            margin-left: 90px;
+        }
+        
+        .search-form {
+            float: right;
+            margin-right: 50px;
+        }
+        
+        .ins-search-input {
+            height: 28px;
+            width: 200px;
+            margin: 1px;
+            border-radius: 30px;
+            position: absolute;
+            border: 1px solid darkgray;
+        }
+        
+        .ins-search-input:focus {
+            background: #e8e8e8;
+            outline: none;
+        }
+        
+        .search-form-submit {
+            border: none;
+            width: 28px;
+            height: 28px;
+            background: url(img/3.jpg) no-repeat top right;
+            border-radius: 30px;
+            position: relative;
+            margin-left: 172px;
+            margin-top: 3px;
+        }
+        
+        .contains {
+            width: 100%;
+            height: 1000px;
+            padding-top: 30px;
+            background-color: #f5f8f9;
+        }
+        
+        .contains_left {
+            width: 20%;
+            height: 400px;
+            float: left;
+            background-color: white;
+            margin-left: 20px;
+            border-radius: 20px;
+            box-shadow: 1px 1px 1px 1px #e1e3e4;
+        }
+        
+        .contains_middle {
+            width: 50%;
+            height: 1600px;
+            float: left;
+            margin-left: 20px;
+            /* background-color: white;
+            border-radius: 20px;
+            box-shadow: 1px 1px 1px 1px #e1e3e4; */
+        }
+        
+        .contains_right {
+            width: 20%;
+            height: 100px;
+            float: left;
+            margin-left: 20px;
+            border-radius: 20px;
+            background-color: white;
+            box-shadow: 1px 1px 1px 1px #e1e3e4;
+        }
+        
+        .my_pic {
+            float: left;
+            height: 100px;
+            width: 100px;
+            border-radius: 100px;
+            overflow: hidden;
+            margin: 20px 0px 0px 20px;
+        }
+        
+        .my_text1 {
+            color: #b7bcbe;
+            float: left;
+            margin-left: 30px;
+            font-size: 15px
+        }
+        
+        .my_name {
+            clear: both;
+            text-align: center;
+            margin: auto;
+        }
+        
+        .my_name1 {
+            color: gray;
+            font-size: 20px;
+        }
+        
+        .my_name2 {
+            color: #a6aaac;
+            font-size: 10px;
+        }
+        
+        .my_button {
+            background-color: cornflowerblue;
+            width: 50%;
+            height: 44px;
+            border-radius: 20px;
+            border: none;
+            margin-top: 20px;
+            color: white;
+            font-family: '微软雅黑';
+            font-size: 15px;
+        }
+        
+        .my_table {
+            margin-top: 20px;
+        }
+        
+        .a_table {
+            border: 1px solid #e1e3e4;
+            border-left: none;
+            border-right: none;
+            width: 100%;
+            text-align: center;
+            color: dimgrey;
+        }
+        
+        .a_table tr {
+            height: 40px;
+            ;
+        }
+        
+        .rel_contains {
+            height: 300px;
+            margin-left: 20px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 1px 1px 1px 1px #e1e3e4;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav1">
+        <img class="nav1_img" src="img/1.jpg">
+
+        <a href="" class="nav1_name"><b>SUMMER/纪文星</b></a>
+        <ul class="nav1_ul">
+            <li class="nav1_li" id="li1"><a href="">主页</a></li>
+            <li class="nav1_li"><a href="">内容</a></li>
+            <li class="nav1_li"><a href="">兴趣</a></li>
+            <li class="nav1_li"><a href="">关于我</a></li>
+        </ul>
+        <form class="search-form">
+            <input type="text" class="ins-search-input" placeholder="搜索" />
+            <button type="submit" class="search-form-submit" value=""></button>
+        </form>
+    </div>
+
+    <div class="contains">
+        <div class="contains_left">
+            <div class="my_doc">
+                <img class="my_pic" src="img/2.jpg" alt="">
+                <div class="my_text1">
+                    <p class="my_text">
+                        前端爱好者
+                    </p>
+                    <p class="my_text">
+                        努力学习中
+                    </p>
+                    <p class="my_text">
+                        小菜鸟一枚
+                    </p>
+                </div>
+
+            </div>
+            <div class="my_name">
+                <b class="my_name1">纪文星</b>
+                <p class="my_name2">江西.上饶</p>
+                <button class="my_button" value="">快收藏我吧</button>
+            </div>
+            <div class="my_table">
+                <table class="a_table">
+                    <tr>
+                        <td>文章</td>
+                        <td>标签</td>
+
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>12</td>
+
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="contains_middle">
+            <div class="rel_contains"></div>
+            <div class="rel_contains"></div>
+            <div class="rel_contains"></div>
+            <div class="rel_contains"></div>
+            <div class="rel_contains"></div>
+        </div>
+        <div class="contains_right"></div>
+    </div>
+</body>
+
+</html>

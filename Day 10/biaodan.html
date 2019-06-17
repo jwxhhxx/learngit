@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-1.11.0.min.js">
+    </script>
+</head>
+
+<body>
+    <!-- <form action="">
+        <input type="text" id="target" value="field 1">
+        <input type="text" value="field 2">
+    
+    </form> -->
+    <form id="target">
+        <input type="submit" value="go">
+    </form>
+</body>
+<script>
+    // $(function() {
+    //     $("#target").select(function() {
+    //         alert("被嵘改变"); 
+    //change select仅限于input textarea  select
+    //     })
+    // }) 
+    //    <!-- subimt 只能绑定在form上 -->
+
+    $(function() {
+        $("#target").submit(function() {
+            alert("被嵘改变");
+        })
+    });
+</script>
+
+</html>

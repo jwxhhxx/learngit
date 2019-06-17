@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        p {
+            width: 100px;
+            height: 50px;
+            background-color: darkgreen;
+            border-radius: 5px;
+            text-align: center;
+            margin: 0 auto;
+            color: #ffffff;
+            font-size: 20px;
+        }
+        
+        .pbtn {
+            background-color: green;
+        }
+    </style>
+    <script src="js/jquery-1.11.0.min.js"></script>
+</head>
+
+<body>
+    <p>按钮</p>
+</body>
+<script>
+    $(function() {
+        // $("p").bind({
+        //     mouseover: function() {
+        //         $(this).addClass("pbtn");
+
+        //     },
+        //     mouseout: function() {
+        //         $(this).removeClass("pbtn");
+        //     }
+        // })
+        $("p").bind("mouseover mouseout", function() {
+            $(this).toggleClass("pbtn");
+        })
+    })
+</script>
+
+</html>

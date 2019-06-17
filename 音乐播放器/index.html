@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>音乐播放器</title>
+    <script src="https://use.fontawesome.com/3e9cf68acb.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .bg {
+            width: 414px;
+            height: 500px;
+            margin: auto;
+            border: 1px solid gray;
+            border-radius: 30px;
+        }
+        
+        .pic_rot {
+            width: 180px;
+            height: 180px;
+            border-radius: 180px;
+            margin: auto;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+        
+        .pic_img {
+            width: 180px;
+            height: 180px;
+            border-radius: 180px;
+            margin: auto;
+        }
+        
+        .content {
+            height: 160px;
+            width: 100%;
+            margin-top: 30px;
+        }
+        
+        .music-message {
+            height: 150px;
+            width: 45%;
+            float: left;
+        }
+        
+        .music-icon {
+            height: 150px;
+            width: 100px;
+            padding-left: 110px;
+            float: left;
+        }
+        /* .wrap-basebar {
+            height: 100px;
+            width: 100%;
+            border: 1px solid black;
+        } */
+        
+        a {
+            text-decoration: none;
+        }
+        
+        ul,
+        li {
+            list-style: none;
+        }
+        
+        .anniu {
+            width: 50px;
+            height: 40px;
+        }
+        
+        .music-icon i {
+            width: 30px;
+            height: 30px;
+            font-size: 30px;
+        }
+        
+        i.colored {
+            color: rgba(109, 95, 95, 0.65);
+            cursor: pointer;
+        }
+        
+        .wrap-basebar {
+            position: relative;
+            width: 400px;
+            height: 4px;
+            margin: 0 auto;
+            margin-bottom: 10px;
+            border-radius: 2px;
+            background-color: #cdd2d7;
+            cursor: pointer;
+        }
+        
+        .music-icon i:hover {
+            text-shadow: 1px 1px 1px #ccc;
+        }
+        
+        .wrap-basebar .progressbar {
+            display: block;
+            width: 0%;
+            height: 4px;
+            border-radius: 2px;
+            background-color: #414141;
+        }
+        
+        .wrap-control {
+            position: relative;
+            width: 400px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+        
+        .wrap-control li {
+            cursor: pointer;
+            float: left;
+        }
+        
+        .play-control-i {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            background-color: #414141;
+            border-radius: 20px;
+            color: #fff;
+            text-align: center;
+            margin-right: 5px;
+            padding: 1px;
+        }
+        
+        .volume-control {
+            margin-left: 60px;
+        }
+        
+        #massage-name {
+            font-size: 22px;
+        }
+        
+        .music-message {
+            color: gray;
+        }
+        
+        .text-ellipse {
+            margin-left: 50px;
+        }
+        
+        i.stared {
+            color: #feec98;
+        }
+        
+        i.loved {
+            color: #fe8698;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg">
+        <audio src="" id="mymusic"></audio>
+
+        <div class="pic_rot">
+            <img class="pic_img" id="pic_img1" src="" alt="">
+        </div>
+        <!-- <button class="button_1" id=" button_11" onclick="rotate()">播放</button> -->
+
+        <div class="content">
+
+            <div class="music-message">
+                <p id="massage-name" class="musicname text-ellipse"></p>
+                <p id="massage-author" class="musicer text-ellipse"></p>
+                <p id="massage-album" class="album text-ellipse"></p>
+
+            </div>
+
+
+            <div class="music-icon">
+                <a href="http://service.weibo.com/share/share.php?" target="_blank"><i class="fa fa-share colored"
+                        aria-hidden="true"></i></a>
+                <i class="fa fa-star colored" onclick="" id="star" aria-hidden="true"></i>
+                <i class="fa fa-heart colored" id="heart" onclick="result() " aria-hidden="true"></i>
+            </div>
+
+        </div>
+
+        <!-- //播放进度 -->
+        <div class="wrap-basebar" id="basebar" onclick="adjust(event)">
+            <span id="wrap-bar" class="progressbar"></span>
+        </div>
+
+        <ul class="wrap-control clear-fix">
+            <li class="music-pre fl play-control-i btn2" onclick="reduce()" title="上一首">
+                <i class="fa fa-backward fa-large " aria-hidden="true"></i>
+            </li>
+            <li class="music-play fl play-control-i " onclick="start()" title="播放/暂停">
+                <i class="fa fa-play fa-large btn1 " aria-hidden="true"></i>
+            </li>
+            <li class="music-next fl play-control-i btn2" onclick="add()" title="下一首">
+                <i class="fa fa-forward fa-large " aria-hidden="true"></i>
+            </li>
+
+            <li class="volume-control fr play-control-i" title="音量/静音">
+                <i class="fa fa-volume-up fa-large colored2" aria-hidden="true"></i>
+                <div class="volume-control-progress">
+                    <div class="volume-control-time-end"></div>
+                    <div class="volume-control-tag"></div>
+                    <div class="volume-control-time-start"></div>
+                </div>
+            </li>
+            <li class="music-menu-icon fr play-control-i" title="换频道">
+                <i class="fa fa-bars fa-large btn3 colored2 " aria-hidden="true"></i>
+            </li>
+
+            <li class="music-random fr play-control-i" title="随机播放">
+                <i class="fa fa-random colored2 btn4" aria-hidden="true"></i>
+            </li>
+            <!-- <li class="music-circle fr play-control-i" title="循环播放">
+                <i class="fa fa-retweet colored" aria-hidden="true"></i>
+            </li> -->
+
+        </ul>
+
+
+    </div>
+</body>
+<script src="js/index.js"></script>
+
+</html>
