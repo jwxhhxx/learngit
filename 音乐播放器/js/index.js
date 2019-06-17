@@ -14,12 +14,63 @@ var myMusic = [{
         img: 'img/4.png'
     },
     {
-        name: '卡路里',
-        author: '火箭少女',
+        name: '一辈子的孤单',
+        author: '刘若英',
         album: 'unfined',
-        URL: 'music/卡路里（电影《西虹市首富》插曲） - 火箭少女101.mp3',
-        img: 'img/3.png'
+        URL: 'music/一辈子的孤单 - 刘若英.mp3',
+        img: 'img/5.png'
     },
+    {
+        name: '他不爱我',
+        author: '莫文蔚',
+        album: 'unfined',
+        URL: 'music/他不爱我 - 莫文蔚.mp3',
+        img: 'img/6.png'
+    },
+    {
+        name: '我从崖边跌落',
+        author: '谢春花',
+        album: 'unfined',
+        URL: 'music/我从崖边跌落 - 谢春花.mp3',
+        img: 'img/7.png'
+    },
+    {
+        name: '我都跟你走',
+        author: '程璧',
+        album: 'unfined',
+        URL: 'music/我都跟你走 - 程璧.mp3',
+        img: 'img/8.png'
+    },
+    {
+        name: '无条件为你',
+        author: '梁静茹',
+        album: 'unfined',
+        URL: 'music/无条件为你 - 梁静茹.mp3',
+        img: 'img/9.png'
+    },
+    {
+        name: '电台情歌',
+        author: '莫文蔚',
+        album: 'unfined',
+        URL: 'music/电台情歌 - 莫文蔚.mp3',
+        img: 'img/10.png'
+    },
+    {
+        name: '知足',
+        author: '五月天',
+        album: 'unfined',
+        URL: 'music/知足 - 五月天.mp3',
+        img: 'img/11.png'
+    },
+    {
+        name: '茉莉花',
+        author: '梁静茹',
+        album: 'unfined',
+        URL: 'music/茉莉花 - 梁静茹.mp3',
+        img: 'img/12.png'
+    },
+
+
 ];
 window.onload = function() {
 
@@ -66,7 +117,7 @@ function music(i) {
     document.getElementById('massage-album').innerHTML = "专辑:" + myMusic[i].album;
     document.getElementById('pic_img1').setAttribute("src", myMusic[i].img);
     document.getElementById('mymusic').setAttribute("src", myMusic[i].URL);
-
+    mus.volume = 0.5;
 }
 
 
@@ -117,6 +168,7 @@ function start() {
         mus.play();
         jindutiao();
     }
+
 }
 
 
@@ -191,6 +243,34 @@ $(".fa-star").on("click", function() {
 
 })
 $(".fa-heart").on("click", function() {
-    $(this).toggleClass('loved').toggleClass('colored');
+        $(this).toggleClass('loved').toggleClass('colored');
 
-})
+    })
+    //音量调节
+function volumedisplay() {
+    if (document.getElementById('display1').style.display == 'block') {
+        document.getElementById('display1').style.display = 'none'; //隐藏
+    } else {
+        //如果不是block证明该div正在隐藏，需要显示
+        document.getElementById('display1').style.display = 'block'; //显示
+    }
+}
+var volume3 = document.getElementById('volume3');
+
+function changeVolume(event) {
+    var y = 100 - event.offsetY;
+    mus.volume = parseFloat(y / 100) * 1;
+    //改变按钮的位置
+    console.log(mus.volume);
+    volume3.style.marginTop = -y - 12 + "px";
+}
+
+function suiji() {
+    reducejindutiao();
+    imagePause();
+    var random1 = Math.random() * 10;
+    var zhengshu = parseInt(random1);
+    music(zhengshu);
+
+    start();
+}

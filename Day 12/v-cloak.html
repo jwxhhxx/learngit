@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+        /* 解决闪烁 */
+    </style>
+</head>
+
+<body>
+    <div id='app' v-cloak>
+        <p>++++{{msg}}——————</p>
+
+        <p v-text="msg">ssfsada</p>
+        <!-- 默认v-text是没有闪烁问题的 -->
+        <!-- v-text会覆盖元素中给原本的内容，但是插值表达式只会替换自己的占位符，不会吧整个内容情况 -->
+        <div v-html='msg2'></div>
+        <!-- 放入html -->
+        <input v-on:click="show" id="btn" type="button" value='按钮' v-bind:title="mytitle+'123'">
+        <!-- v-bind是vue中用于绑定属性的指令 -->
+        <!-- v-bind属性可以被简写为：要绑定的属性
+        v-bind中，可以写合法的js表达式 -->
+        <!-- vue中提供了v-on绑定事件 -->
+    </div>
+
+    <script>
+        var vm = new Vue({
+                el: '#app',
+                data: {
+                    msg: '123',
+                    msg2: '<h1>Hhhhhh</h1>',
+                    mytitle: '这是自定义的title'
+                },
+                methods: { //定义了当前vue使用的所有方法
+                    show: function() {
+                        document.getElementById('btn').onclick = function() {
+                            alert('msgdsd');
+                        }
+                    }
+
+                }
+            })
+            // document.getElementById('btn').onclick = function() {
+            //     alert('msg');
+            // }
+    </script>
+</body>
+
+</html>

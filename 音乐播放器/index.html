@@ -16,10 +16,11 @@
         }
         
         .bg {
+            box-shadow: 10px 10px 5px #888888;
             width: 414px;
             height: 500px;
             margin: auto;
-            border: 1px solid gray;
+            border: 1px solid rgba(109, 95, 95, 0.65);
             border-radius: 30px;
         }
         
@@ -30,6 +31,7 @@
             margin: auto;
             margin-top: 20px;
             overflow: hidden;
+            box-shadow: 5px 5px 2px #888888;
         }
         
         .pic_img {
@@ -158,6 +160,42 @@
         i.loved {
             color: #fe8698;
         }
+        
+        .volume-control-progress {
+            display: none;
+            position: absolute;
+            top: -105px;
+            background: linear-gradient(#EEF1F2, #D2D5D6);
+            width: 40px;
+            height: 100px;
+            border-radius: 5px;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        
+        .volume-control-time-start {
+            width: 4px;
+            height: 0%;
+            background-color: #5D595D;
+            margin: 0 auto;
+        }
+        
+        .volume-control-tag {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #5D595D;
+            margin: 0 auto;
+            margin-top: -62px;
+        }
+        
+        .volume-control-time-end {
+            height: 100px;
+            width: 4px;
+            background-color: rgba(160, 157, 157, 0.6);
+            margin: 0 auto;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -206,18 +244,18 @@
             </li>
 
             <li class="volume-control fr play-control-i" title="音量/静音">
-                <i class="fa fa-volume-up fa-large colored2" aria-hidden="true"></i>
-                <div class="volume-control-progress">
-                    <div class="volume-control-time-end"></div>
-                    <div class="volume-control-tag"></div>
-                    <div class="volume-control-time-start"></div>
+                <i class="fa fa-volume-up fa-large colored2" aria-hidden="true" onclick="volumedisplay()"></i>
+                <div class="volume-control-progress" id="display1">
+                    <div class="volume-control-time-end" onclick="changeVolume(event)"></div>
+                    <div class="volume-control-tag" id="volume3"></div>
+                    <!-- <div class="volume-control-time-start" id="volume3"></div> -->
                 </div>
             </li>
             <li class="music-menu-icon fr play-control-i" title="换频道">
                 <i class="fa fa-bars fa-large btn3 colored2 " aria-hidden="true"></i>
             </li>
 
-            <li class="music-random fr play-control-i" title="随机播放">
+            <li class="music-random fr play-control-i" title="随机播放" onclick="suiji()">
                 <i class="fa fa-random colored2 btn4" aria-hidden="true"></i>
             </li>
             <!-- <li class="music-circle fr play-control-i" title="循环播放">
@@ -228,6 +266,7 @@
 
 
     </div>
+
 </body>
 <script src="js/index.js"></script>
 
