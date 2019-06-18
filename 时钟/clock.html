@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Neon Text</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            height: 100vh;
+            background-color: black;
+            background-size: cover;
+        }
+        
+        .neon-wrap {
+            width: 100vw;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        
+        .neon-text {
+            font-family: DS;
+            font-size: 50px;
+            color: #bbdefb;
+            text-shadow: -3px 0px 5px #bbdefb, 0px 0px 2px #bbdefb;
+        }
+        
+        .neon-blink {
+            animation: neon 4s infinite;
+        }
+        
+        .neon-clock {
+            font-family: DS;
+            font-size: 80px;
+            color: #FFEB3B;
+            text-shadow: -3px 0px 5px #FFEB3B, 0px 0px 2px #FFEB3B;
+        }
+        
+        .neon-by {
+            color: #bbdefb;
+            text-shadow: -3px 0px 5px #bbdefb, 0px 0px 2px #bbdefb;
+        }
+        
+        @keyframes neon {
+            0%,
+            30%,
+            32%,
+            34% {
+                color: #222;
+                text-shadow: -3px 0px 5px #222, 0px 0px 2px #222;
+            }
+            31%,
+            33%,
+            35%,
+            75% {
+                color: #bbdefb;
+                text-shadow: -3px 0px 5px #bbdefb, 0px 0px 2px #bbdefb;
+            }
+        }
+        
+        @font-face {
+            font-family: DS;
+            /*为引入的字体命名*/
+            src: url(font/DS-DIGIT.TTF);
+            /*定义要引入字体文件的路径*/
+        }
+        /* 如何调用网络上下载的字体 */
+    </style>
+</head>
+
+<body onload="start()">
+    <div class="neon-wrap">
+        <div class="neon-text">
+            <span class="neon-blink">C</span> L<span class="neon-blink">O</span>C<span class="neon-blink">K</span>
+        </div>
+        <div class="neon-clock">
+
+            <span id="timer-hour" class="timer-num"></span>
+            <span class="timer-sep">:</span>
+            <span id="timer-menite" class="timer-num"></span>
+            <span class="timer-sep">:</span>
+            <span id="timer-second" class="timer-num"></span>
+        </div>
+        <div class="neon-by">by @Summer</div>
+    </div>
+    <script>
+        function displayTime() {
+            //1.获取div元素
+            var timespan1 = document.getElementById("timer-hour");
+            var timespan2 = document.getElementById("timer-menite");
+            var timespan3 = document.getElementById("timer-second");
+            //2.获取系统当前时间
+            var myDate = new Date();
+            var hours = ('0' + myDate.getHours()).slice(-2); //加 0 防止出现一位数
+            var min = ('0' + myDate.getMinutes()).slice(-2); //通过slice 截取最后两位
+            var sec = ('0' + myDate.getSeconds()).slice(-2);
+            var strNowTime1 = hours.toLocaleString();
+            var strNowTime2 = min.toLocaleString();
+            var strNowTime3 = sec.toLocaleString();
+            //3.将系统时间设置到div元素中
+            timespan1.innerHTML = hours;
+            timespan2.innerHTML = min;
+            timespan3.innerHTML = sec;
+        }
+
+        function start() {
+            window.setInterval("displayTime()", 1000) //单位是毫秒
+        }
+    </script>
+
+</html>
