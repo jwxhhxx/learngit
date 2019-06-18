@@ -150,15 +150,7 @@ function reducejindutiao() {
     jindu1.style.width = "0";
 }
 
-// function pauseall() {
-//     for (var i = 0; i < myMusic.length; i++) {
-//         if (mus) {
-//             mus.pause();
-//         }
-//     }
-// }
 
-//点击播放，暂停 
 
 
 function start() {
@@ -216,31 +208,7 @@ function adjust(event) {
     mus.play();
 
 }
-// var flag1 = 0;
 
-// function changecolor() {
-
-//     document.getElementById('heart').style.color = "pink";
-//     flag1 = 1;
-// }
-
-// function huifu() {
-
-//     document.getElementById('heart').style.color = "rgba(109, 95, 95, 0.65);";
-
-//     flag1 = 0;
-// }
-
-// function result() {
-
-//     if (flag1) {
-//         huifu();
-//     } else {
-//         changecolor();
-//         flag1 = 1;
-//     }
-
-// }
 //目前没有想到好的方法来写，先用jQury
 $(".fa-star").on("click", function() {
     $(this).toggleClass('stared').toggleClass('colored');
