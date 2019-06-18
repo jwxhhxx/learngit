@@ -138,6 +138,9 @@ function jindutiao() {
 
         jindu1.style.width = "" + parseFloat(cur / lenth) * 400 + "px" + "";
         // console.log(jindu1.style.width);
+        if (cur >= lenth) {
+            add();
+        }
     }, 50);
 
 }
@@ -211,6 +214,7 @@ function adjust(event) {
     jindu1.style.width = x + "px";
     mus.currentTime = "" + parseInt(x * lenth / 300) + "";
     mus.play();
+
 }
 // var flag1 = 0;
 
