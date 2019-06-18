@@ -12,13 +12,27 @@
 
 <body>
     <div id="app">
-        <p v-for='(item,i) in list'>索引值{{i}}----每一项{{item}}</p>
+        <p v-for='user in list'>{{user.id}}----{{user.name}}</p>
     </div>
     <script>
         var vm = new Vue({
             el: '#app',
             data: {
-                list: [1, 2, 3, 4, 5]
+                list: [{
+                        id: 1,
+                        name: 'zs1'
+                    }, {
+                        id: 2,
+                        name: 'zs2'
+                    }, {
+                        id: 3,
+                        name: 'zs3'
+                    }, {
+                        id: 4,
+                        name: 'zs4'
+                    },
+
+                ]
             },
 
             methods: {

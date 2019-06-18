@@ -11,14 +11,20 @@
 </head>
 
 <body>
+    <!-- 在遍历对象身上的键值对时，除了有val key 在第三个位置还有索引 -->
     <div id="app">
-        <p v-for='(item,i) in list'>索引值{{i}}----每一项{{item}}</p>
+        <p v-for='(val,key) in user'>值是:{{val}}====键是:{{key}}</p>
     </div>
     <script>
         var vm = new Vue({
             el: '#app',
             data: {
-                list: [1, 2, 3, 4, 5]
+                user: {
+                    id: 1,
+                    name: 'zs1',
+                    gender: '男'
+                }
+
             },
 
             methods: {
