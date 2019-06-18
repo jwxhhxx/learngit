@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 1导入vue包 -->
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+
+<body>
+    <!-- v-on的缩写是@
+    v-bind的缩写是: -->
+    <div id="app">
+        <input type="button" value="浪起来" @click='lang'>
+        <input type="button" value="低调" @click='stop'>
+        <h4>{{msg}}</h4>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '猥琐发育，别浪',
+            intervalId: null
+        },
+        methods: {
+            lang() { //在vm实例中想要获取data上的数据，或者方法要用this
+                //来进行访问，这里的this就表示我们new出来的对象
+                if (this.intervalId != null) {
+                    return;
+                }
+                this.intervalId = setInterval(() => { //可以让里面获取到外面的this
+                    console.log(this.msg)
+                        //获取到头的第一个字符
+                    var start = this.msg.substring(0, 1)
+                        //获取后面的所有字符
+                    var end = this.msg.substring(1)
+                        //重新拼接
+                    this.msg = end + start
+                }, 400)
+            },
+            stop() {
+                clearInterval(this.intervalId)
+                this.intervalId = null //每当清除了定时器后要把它变回null
+            }
+
+        }
+    })
+
+    //分析
+    //1.给浪起来按钮，绑定一个点击事件v-on
+    //2.在按钮的事件处理函数中，写相关的业务逻辑代码：拿到msg字符串，然后调用字符串
+    //的substring来进行字符串的截取，把第一个字符截取出来，放到最后一个位置
+    //3为了实现点击下按钮自动截取的功能，需要把2步骤中的代码放到一个定时器中
+</script>
+
+</html>

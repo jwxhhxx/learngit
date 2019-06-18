@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .inner {
+            height: 150px;
+            background-color: darkslategrey;
+        }
+    </style>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="inner">
+            <input type="button" value="戳他" @click=divlhandeler()>
+        </div>
+    </div>
+    <!-- 使用stop阻止冒泡行为
+    使用prevent阻止默认行为
+    使用capture实现捕获触发事件的机制
+    使用self实现只有点击当前元素才能触发 
+使用once只触发一次事件-->
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {},
+
+            methods: {
+                divlhandeler() {
+                    console.log('这是触发了innerdiv的点击事件')
+                },
+                btnhandler() {
+                    console.log('这是触发了按钮的点击事件')
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
