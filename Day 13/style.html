@@ -7,25 +7,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+
 </head>
 
 <body>
     <div id="app">
-        <h4>{{msg}}</h4>
-        <input type="text" v-model:value='msg'>
+        <h1 :style="styleobj">这是一个好 </h1>
     </div>
     <script>
-        //v-bind只能实现单向绑定
-        //v-model实现双向绑定
         var vm = new Vue({
             el: '#app',
             data: {
-                msg: 'Hhhhh好好学习天天向上'
+                styleobj: {
+                    color: 'red',
+                    'font-weight': 200
+                }
             },
-            mrthods: {
+
+            methods: {
 
             }
-
         })
     </script>
 </body>
