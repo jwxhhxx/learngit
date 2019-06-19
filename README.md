@@ -11,3 +11,4 @@
 [音乐播放器]( https://jwxhhxx.github.io/learngit/音乐播放器/index.html)  
 [时钟]( https://jwxhhxx.github.io/learngit/时钟/clock.html)  
 [轮播图]( https://jwxhhxx.github.io/learngit/day2/lunbotu.html)
+[轮播图]( https://jwxhhxx.github.io/learngit/简易小画板/index.html)
