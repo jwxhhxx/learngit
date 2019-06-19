@@ -200,8 +200,13 @@
 
     function save() {
         //返回一张使用canvas绘制的图片   
-        var dataUrl = canvas.toDataURL();
-        img.src = dataUrl;
+        var imgUrl = canvas.toDataURL("image/png");
+        var saveA = document.createElement("a");
+        document.body.appendChild(saveA);
+        saveA.href = imgUrl;
+        saveA.download = "zspic" + (new Date).getTime();
+        saveA.target = "_blank";
+        saveA.click();
     }
 
 
