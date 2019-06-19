@@ -10,10 +10,13 @@
         body {
             margin: 0;
             padding: 0;
+            width: 100%;
         }
         
         .daohang {
             background-color: dimgray;
+            width: 100%;
+            height: 25px;
         }
         
         canvas {
@@ -21,7 +24,9 @@
             padding: 0;
         }
         
-        .color {}
+        .color {
+            margin-right: 50px;
+        }
         
         .color-choose {
             height: 20px;
@@ -29,6 +34,7 @@
             border-radius: 20px;
             float: left;
             list-style: none;
+            margin-right: 20px;
         }
         
         #black {
@@ -50,6 +56,43 @@
         #yellow {
             background-color: yellow;
         }
+        
+        .button {
+            height: 25px;
+            width: 25px;
+            border-radius: 25px;
+            background-color: darkgray;
+            color: white;
+            margin-left: 30px;
+        }
+        
+        .brush-choose {
+            float: left;
+            list-style: none;
+            background-color: black;
+            margin-left: 10px;
+            border: none;
+        }
+        
+        #sma {
+            height: 5px;
+            width: 5px;
+            border-radius: 5px;
+            margin-top: 8px;
+        }
+        
+        #mid {
+            height: 10px;
+            width: 10px;
+            border-radius: 10px;
+            margin-top: 5px;
+        }
+        
+        #lar {
+            height: 20px;
+            width: 20px;
+            border-radius: 20px;
+        }
     </style>
 </head>
 
@@ -64,8 +107,14 @@
             <li class="color-choose" id="green" onclick="change3()"></li>
             <li class="color-choose" id="yellow" onclick="change4()"></li>
             <li class="color-choose" id="blue" onclick="change5()"></li>
-        </ul><button onclick="clean();">清 空</button>
-        <button onclick="save();">生成图片</button>
+        </ul>
+        <ul class="brush">
+            <li class="brush-choose" id="sma" onclick="brush1()"></li>
+            <li class="brush-choose" id="mid" onclick="brush2()"></li>
+            <li class="brush-choose" id="lar" onclick="brush3()"></li>
+        </ul>
+        <button class="button" onclick="clean();" value="清空">←</button>
+        <button class="button" onclick="save();" value="保存">✉</button>
     </div>
     <img id='img' />
 </body>
@@ -87,6 +136,7 @@
     board = canvas.getContext('2d');
     //设置画笔宽度和颜色
     board.lineWidth = 1;
+
     board.strokeStyle = "black";
     //声明变量，表示鼠标的按下状态,false表示未按下，true表示按下
     var mousePress = false;
@@ -192,6 +242,18 @@
 
     function change5() {
         board.strokeStyle = "blue";
+    }
+
+    function brush1() {
+        board.lineWidth = 1;
+    }
+
+    function brush2() {
+        board.lineWidth = 3;
+    }
+
+    function brush3() {
+        board.lineWidth = 5;
     }
 </script>
 
