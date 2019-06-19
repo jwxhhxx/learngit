@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{msg|msgFormat('疯狂+1')}}</p>
+    </div>
+</body>
+
+<script>
+    Vue.filter('msgFormat', function(msg, arg) {
+        //replace的第一个参数除了写字符串还可以写一个正则
+        return msg.replace(/单纯/g, arg)
+    });
+    //做输出前最后的修改 
+    //定义一个vue全局过滤器，名字叫做msgFormat
+    //也可以多次传参,也可以多次调用
+    // 全局过滤器和私有过滤器名称重复了优先调用私有过滤器
+
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '曾经我也是一个单纯的少年，单纯的我傻傻的问'
+        },
+        methods: {}
+
+    });
+</script>
+
+</html>//
