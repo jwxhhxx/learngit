@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+
+<body>
+    <ul id="example1" class="demo">
+        <li v-for="value in object" @onload="go">
+            {{ value }}
+        </li>
+    </ul>
+    <script>
+        new Vue({
+            el: '#example1',
+            data: {
+                object: {
+                    title: 'How to do lists in Vue',
+                    author: 'Jane Doe',
+                    publishedAt: '2016-04-10'
+                }
+            },
+            methods: {
+                go() {
+                    return example1.items.push({
+                        message: 'Baz'
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
