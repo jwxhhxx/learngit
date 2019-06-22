@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #calculator {
+            width: 200px;
+            height: 245px;
+            padding: 10px;
+            border: 1px solid #e5e5e5;
+            background: #f8f8f8;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            box-shadow: 0px 0px 10px #f2f2f2;
+            -moz-box-shadow: 0px 0px 10px #f2f2f2;
+            -webkit-box-shadow: 0px 0px 10px #f2f2f2;
+            margin: 40px auto 0 auto;
+        }
+        
+        #calculator input {
+            margin: 0;
+            width: 187px;
+            padding: 9px 5px;
+            height: 14px;
+            border: 1px solid #e5e5e5;
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            background: #FFF;
+            text-align: right;
+            line-height: 14px;
+            font-size: 12px;
+            font-family: Verdana, Geneva, sans-serif;
+            color: #666;
+            outline: none;
+            text-transform: uppercase;
+        }
+        
+        .main div {
+            float: left;
+        }
+        
+        .button-1,
+        .button-2,
+        .button-3,
+        .button-4,
+        .button-5 {
+            margin-top: 10px;
+        }
+        
+        #btn-C {
+            width: 34px;
+            height: 28px;
+            text-align: center;
+            background: #e5e5e5;
+            border: 1px solid #e5e5e5;
+        }
+        
+        #btn-all {
+            width: 34px;
+            height: 28px;
+            margin-left: 5px;
+            text-align: center;
+            background: #e5e5e5;
+            border: 1px solid #e5e5e5;
+        }
+        
+        #btn-baifen {
+            width: 34px;
+            height: 28px;
+            margin-left: 5px;
+            text-align: center;
+            background: #e5e5e5;
+            border: 1px solid #e5e5e5;
+        }
+        
+        #btn-re {
+            width: 75px;
+            height: 28px;
+            margin-left: 5px;
+            text-align: center;
+            background: #e5e5e5;
+            border: 1px solid #e5e5e5;
+        }
+        
+        #btn-seven {
+            width: 34px;
+            height: 28px;
+            text-align: center;
+            background: #e5e5e5;
+            border: 1px solid #e5e5e5;
+        }
+        
+        #btn-eight {
+            width: 34px;
+            height: 28px;
+            margin-left: 5px;
+            text-align: center;
+            background: #e5e5e5;
+            border: 1px solid #e5e5e5;
+        }
+        
+        #btn-nine {
+            width: 34px;
+            height: 28px;
+            margin-left: 5px;
+            text-align: center;
+            background: #e5e5e5;
+            border: 1px solid #e5e5e5;
+        }
+        
+        #btn-jia {
+            width: 34px;
+            height: 28px;
+            margin-left: 5px;
+            text-align: center;
+            background: #e5e5e5;
+            border: 1px solid #e5e5e5;
+        }
+        
+        #btn-jian {
+            width: 34px;
+            height: 28px;
+            margin-left: 5px;
+            text-align: center;
+            background: #e5e5e5;
+            border: 1px solid #e5e5e5;
+        }
+        
+        #btn-four {
+            width: 34px;
+            height: 28px;
+            text-align: center;
+            background: #e5e5e5;
+            border: 1px solid #e5e5e5;
+        }
+        
+        #btn-five,
+        #btn-six,
+        #btn-cheng,
+        #btn-chu {
+            width: 34px;
+            height: 28px;
+            margin-left: 5px;
+            text-align: center;
+            background: #e5e5e5;
+            border: 1px solid #e5e5e5;
+        }
+        
+        #btn-one {
+            width: 34px;
+            height: 28px;
+            text-align: center;
+            background: #e5e5e5;
+            border: 1px solid #e5e5e5;
+        }
+        
+        #btn-two,
+        #btn-three,
+        #btn-pingfang,
+        #btn-genhao {
+            width: 34px;
+            height: 28px;
+            margin-left: 5px;
+            text-align: center;
+            background: #e5e5e5;
+            border: 1px solid #e5e5e5;
+        }
+        
+        #btn-zero {
+            width: 75px;
+            height: 28px;
+            text-align: center;
+            background: #e5e5e5;
+            border: 1px solid #e5e5e5;
+        }
+        
+        #btn-dian {
+            width: 34px;
+            height: 28px;
+            margin-left: 5px;
+            text-align: center;
+            background: #e5e5e5;
+            border: 1px solid #e5e5e5;
+        }
+        
+        #btn-deng {
+            width: 75px;
+            height: 28px;
+            margin-left: 5px;
+            text-align: center;
+            background: #e5e5e5;
+            border: 1px solid #e5e5e5;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="calculator">
+        <!--显示框-->
+        <input v-bind:input-show="inputShow">
+
+        </input>
+        <div class="main">
+            <div class="button-1" id="btn-C">C</div>
+            <div class="button-1" id="btn-all">+/-</div>
+            <div class="button-1" id="btn-baifen">%</div>
+            <div class="button-1" id="btn-re">←</div>
+            <div class="button-2" id="btn-seven">7</div>
+            <div class="button-2" id="btn-eight">8</div>
+            <div class="button-2" id="btn-nine">9</div>
+            <div class="button-2" id="btn-jia">+</div>
+            <div class="button-2" id="btn-jian">-</div>
+            <div class="button-3" id="btn-four">4</div>
+            <div class="button-3" id="btn-five">5</div>
+            <div class="button-3" id="btn-six">6</div>
+            <div class="button-3" id="btn-cheng">x</div>
+            <div class="button-3" id="btn-chu">÷</div>
+            <div class="button-4" id="btn-one">1</div>
+            <div class="button-4" id="btn-two">2</div>
+            <div class="button-4" id="btn-three">3</div>
+            <div class="button-4" id="btn-pingfang">×²</div>
+            <div class="button-4" id="btn-genhao">√</div>
+            <div class="button-5" id="btn-zero">0</div>
+            <div class="button-5" id="btn-dian">. </div>
+            <div class="button-5" id="btn-deng">=</div>
+        </div>
+    </div>
+</body>
+
+</html>
