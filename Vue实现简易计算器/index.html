@@ -5,232 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        #calculator {
-            width: 200px;
-            height: 245px;
-            padding: 10px;
-            border: 1px solid #e5e5e5;
-            background: #f8f8f8;
-            -moz-border-radius: 3px;
-            -webkit-border-radius: 3px;
-            border-radius: 3px;
-            box-shadow: 0px 0px 10px #f2f2f2;
-            -moz-box-shadow: 0px 0px 10px #f2f2f2;
-            -webkit-box-shadow: 0px 0px 10px #f2f2f2;
-            margin: 40px auto 0 auto;
-        }
-        
-        #calculator input {
-            margin: 0;
-            width: 187px;
-            padding: 9px 5px;
-            height: 14px;
-            border: 1px solid #e5e5e5;
-            border-radius: 3px;
-            -webkit-border-radius: 3px;
-            -moz-border-radius: 3px;
-            background: #FFF;
-            text-align: right;
-            line-height: 14px;
-            font-size: 12px;
-            font-family: Verdana, Geneva, sans-serif;
-            color: #666;
-            outline: none;
-            text-transform: uppercase;
-        }
-        
-        .main div {
-            float: left;
-        }
-        
-        .button-1,
-        .button-2,
-        .button-3,
-        .button-4,
-        .button-5 {
-            margin-top: 10px;
-        }
-        
-        #btn-C {
-            width: 34px;
-            height: 28px;
-            text-align: center;
-            background: #e5e5e5;
-            border: 1px solid #e5e5e5;
-        }
-        
-        #btn-all {
-            width: 34px;
-            height: 28px;
-            margin-left: 5px;
-            text-align: center;
-            background: #e5e5e5;
-            border: 1px solid #e5e5e5;
-        }
-        
-        #btn-baifen {
-            width: 34px;
-            height: 28px;
-            margin-left: 5px;
-            text-align: center;
-            background: #e5e5e5;
-            border: 1px solid #e5e5e5;
-        }
-        
-        #btn-re {
-            width: 75px;
-            height: 28px;
-            margin-left: 5px;
-            text-align: center;
-            background: #e5e5e5;
-            border: 1px solid #e5e5e5;
-        }
-        
-        #btn-seven {
-            width: 34px;
-            height: 28px;
-            text-align: center;
-            background: #e5e5e5;
-            border: 1px solid #e5e5e5;
-        }
-        
-        #btn-eight {
-            width: 34px;
-            height: 28px;
-            margin-left: 5px;
-            text-align: center;
-            background: #e5e5e5;
-            border: 1px solid #e5e5e5;
-        }
-        
-        #btn-nine {
-            width: 34px;
-            height: 28px;
-            margin-left: 5px;
-            text-align: center;
-            background: #e5e5e5;
-            border: 1px solid #e5e5e5;
-        }
-        
-        #btn-jia {
-            width: 34px;
-            height: 28px;
-            margin-left: 5px;
-            text-align: center;
-            background: #e5e5e5;
-            border: 1px solid #e5e5e5;
-        }
-        
-        #btn-jian {
-            width: 34px;
-            height: 28px;
-            margin-left: 5px;
-            text-align: center;
-            background: #e5e5e5;
-            border: 1px solid #e5e5e5;
-        }
-        
-        #btn-four {
-            width: 34px;
-            height: 28px;
-            text-align: center;
-            background: #e5e5e5;
-            border: 1px solid #e5e5e5;
-        }
-        
-        #btn-five,
-        #btn-six,
-        #btn-cheng,
-        #btn-chu {
-            width: 34px;
-            height: 28px;
-            margin-left: 5px;
-            text-align: center;
-            background: #e5e5e5;
-            border: 1px solid #e5e5e5;
-        }
-        
-        #btn-one {
-            width: 34px;
-            height: 28px;
-            text-align: center;
-            background: #e5e5e5;
-            border: 1px solid #e5e5e5;
-        }
-        
-        #btn-two,
-        #btn-three,
-        #btn-pingfang,
-        #btn-genhao {
-            width: 34px;
-            height: 28px;
-            margin-left: 5px;
-            text-align: center;
-            background: #e5e5e5;
-            border: 1px solid #e5e5e5;
-        }
-        
-        #btn-zero {
-            width: 75px;
-            height: 28px;
-            text-align: center;
-            background: #e5e5e5;
-            border: 1px solid #e5e5e5;
-        }
-        
-        #btn-dian {
-            width: 34px;
-            height: 28px;
-            margin-left: 5px;
-            text-align: center;
-            background: #e5e5e5;
-            border: 1px solid #e5e5e5;
-        }
-        
-        #btn-deng {
-            width: 75px;
-            height: 28px;
-            margin-left: 5px;
-            text-align: center;
-            background: #e5e5e5;
-            border: 1px solid #e5e5e5;
-        }
-    </style>
+    <title>计算器</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+
 </head>
 
 <body>
-    <div id="calculator">
-        <!--显示框-->
-        <input v-bind:input-show="inputShow">
 
-        </input>
-        <div class="main">
-            <div class="button-1" id="btn-C">C</div>
-            <div class="button-1" id="btn-all">+/-</div>
-            <div class="button-1" id="btn-baifen">%</div>
-            <div class="button-1" id="btn-re">←</div>
-            <div class="button-2" id="btn-seven">7</div>
-            <div class="button-2" id="btn-eight">8</div>
-            <div class="button-2" id="btn-nine">9</div>
-            <div class="button-2" id="btn-jia">+</div>
-            <div class="button-2" id="btn-jian">-</div>
-            <div class="button-3" id="btn-four">4</div>
-            <div class="button-3" id="btn-five">5</div>
-            <div class="button-3" id="btn-six">6</div>
-            <div class="button-3" id="btn-cheng">x</div>
-            <div class="button-3" id="btn-chu">÷</div>
-            <div class="button-4" id="btn-one">1</div>
-            <div class="button-4" id="btn-two">2</div>
-            <div class="button-4" id="btn-three">3</div>
-            <div class="button-4" id="btn-pingfang">×²</div>
-            <div class="button-4" id="btn-genhao">√</div>
-            <div class="button-5" id="btn-zero">0</div>
-            <div class="button-5" id="btn-dian">. </div>
-            <div class="button-5" id="btn-deng">=</div>
+    <body>
+
+        <div id="calculator">
+
+            <!--显示框由组件生成-->
+            <input-box v-bind:input-show="inputShow">
+
+            </input-box>
+            <btn-list>
+                <div v-on:click="operator('clear')" class=" btn-30 btn-radius color-red clear-marginleft">C</div>
+                <div v-on:click="operator('opposite')" class=" btn-30 btn-radius color-blue">+/-</div>
+                <div v-on:click="operator('percent')" class=" btn-30 btn-radius color-blue">%</div>
+                <div v-on:click="operator('backspace')" class=" btn-70 btn-radius color-red font-14">←</div>
+                <div v-on:click="typetoinput('7')" class=" btn-30 btn-radius clear-marginleft">7</div>
+                <div v-on:click="typetoinput('8')" class=" btn-30 btn-radius">8</div>
+                <div v-on:click="typetoinput('9')" class=" btn-30 btn-radius">9</div>
+                <div v-on:click="operator('plus')" class=" btn-30 btn-radius color-blue font-14">+</div>
+                <div v-on:click="operator('minus')" class=" btn-30 btn-radius color-blue font-14">-</div>
+                <div v-on:click="typetoinput('4')" class=" btn-30 btn-radius clear-marginleft">4</div>
+                <div v-on:click="typetoinput('5')" class=" btn-30 btn-radius">5</div>
+                <div v-on:click="typetoinput('6')" class=" btn-30 btn-radius">6</div>
+                <div v-on:click="operator('multiply')" class=" btn-30 btn-radius color-blue font-14">×</div>
+                <div v-on:click="operator('divide')" class=" btn-30 btn-radius color-blue font-12">÷</div>
+                <div v-on:click="typetoinput('1')" class=" btn-30 btn-radius clear-marginleft">1</div>
+                <div v-on:click="typetoinput('2')" class=" btn-30 btn-radius">2</div>
+                <div v-on:click="typetoinput('3')" class=" btn-30 btn-radius">3</div>
+                <div v-on:click="operator('pow')" class=" btn-30 btn-radius color-blue font-14">×²</div>
+                <div v-on:click="operator('sqrt')" class=" btn-30 btn-radius color-blue font-12">√</div>
+                <div v-on:click="typetoinput('0')" class=" btn-70 btn-radius clear-marginleft">0</div>
+                <div v-on:click="typetoinput('.')" class=" btn-30 btn-radius">.</div>
+                <div v-on:click="operator('result')" class=" btn-70 btn-radius color-red font-14">=</div>
+            </btn-list>
         </div>
-    </div>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+
 </body>
 
 </html>
