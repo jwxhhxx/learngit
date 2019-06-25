@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="app">
+        <div v-pin="true" class="card">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo iste voluptas nulla mollitia voluptatem? Nisi earum repellat placeat s</div>
+        <div v-pin="true" class="card">em ipsum dolor, </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident dignissimos suscipit ex sapiente, voluptatum consequatur error cupiditate laudantium labore deleniti dolorem dolore et consequunt Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Voluptatibus, eum voluptate. Fugit in laborum non aperiam aliquam nulla, doloribus magnam fuga optio placeat dignissimos aspernatur tenetur alias amet vel. Omnis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam explicabo iusto
+            accusamus earum ea exercitationem obcaecati perspiciatis minima nemo, nostrum porro, consequatur molestias. Beatae consectetur doloribus excepturi culpa, nostrum eius! ur molestias obcaecati aut exercitationem nesciunt illum?
+        </div>
+    </div>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <script>
+        Vue.directive('pin', function(el, binding) {
+            var pinned = binging.value;
+            if (pinned) {
+                el.style.position = 'fixed';
+                el.style.top = '10px';
+                el.style.left = '10px'
+
+            }
+        })
+        new Vie({
+            el: '#app',
+            data: {}
+        })
+    </script>
+</body>
+
+</html>
