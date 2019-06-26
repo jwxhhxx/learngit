@@ -24,7 +24,7 @@ function scrollFun(e) {
     var event = e || window.event;
     var dir = event.detail || -event.wheelDelta;
     if (startTime - endTime > 1000) {
-        if (dir > 0 && now > -3 * len) {
+        if (dir > 0 && now > -4 * len) {
             now -= len;
             main.style.top = now + "px";
             endTime = new Date().getTime();
@@ -36,4 +36,44 @@ function scrollFun(e) {
     } else {
         event.preventDefault();
     }
+}
+
+function change1() {
+    document.getElementById("task-one").style.display = "block";
+    document.getElementById("task-two").style.display = "none";
+    document.getElementById("task-three").style.display = "none";
+    document.getElementById("task-four").style.display = "none";
+    document.getElementById("task-five").style.display = "none";
+}
+
+function change2() {
+    document.getElementById("task-one").style.display = "none";
+    document.getElementById("task-two").style.display = "block";
+    document.getElementById("task-three").style.display = "none";
+    document.getElementById("task-four").style.display = "none";
+    document.getElementById("task-five").style.display = "none";
+}
+
+function change3() {
+    document.getElementById("task-one").style.display = "none";
+    document.getElementById("task-two").style.display = "none";
+    document.getElementById("task-three").style.display = "block";
+    document.getElementById("task-four").style.display = "none";
+    document.getElementById("task-five").style.display = "none";
+}
+
+function change4() {
+    document.getElementById("task-one").style.display = "none";
+    document.getElementById("task-two").style.display = "none";
+    document.getElementById("task-three").style.display = "none";
+    document.getElementById("task-four").style.display = "block";
+    document.getElementById("task-five").style.display = "none";
+}
+
+function change5() {
+    document.getElementById("task-one").style.display = "none";
+    document.getElementById("task-two").style.display = "none";
+    document.getElementById("task-three").style.display = "none";
+    document.getElementById("task-four").style.display = "none";
+    document.getElementById("task-five").style.display = "block";
 }
