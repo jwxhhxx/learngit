@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+
+</head>
+
+<body>
+    <div id="main" v-on:click='hideTooltip'>
+        <div class="tooltip" v-on:click.stop v-if='show_tooltip'>
+            <input type="text" v-model='text_content'>
+
+        </div>
+        <p v-on:click.stop='toggleTooltip'>{{text_content}}</p>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#main',
+            data: {
+                show_tooltip: false,
+                text_content: '点我，并编辑内容'
+            },
+            methods: {
+                hideTooltip: function() {
+                    this.show_tooltip = false;
+                },
+                toggleTooltip: function() {
+                    this.show_tooltip = !this.show_tooltip;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
