@@ -284,22 +284,6 @@
                                 background-color: gray;
                             }
                             
-                            .box-lg {
-                                height: 400px;
-                                width: 500px;
-                                float: left;
-                                margin-top: 100px;
-                            }
-                            
-                            .box-lg h1,
-                            .box-lg h2 {
-                                text-align: center;
-                            }
-                            
-                            .page3-img {
-                                float: left;
-                            }
-                            
                             .task img {
                                 height: 200px;
                                 width: 200px;
