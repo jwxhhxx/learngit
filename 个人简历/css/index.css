@@ -4,6 +4,12 @@
  
  #page2 .img {
      display: block;
+     float: left;
+ }
+ 
+ #page2 img {
+     height: 250px;
+     width: 250px;
  }
  
  table {

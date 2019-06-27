@@ -43,6 +43,8 @@
                                 background: url(../images/testimonial-bg.jpg) no-repeat center center;
                             }
                             
+                            #page5 {}
+                            
                             .navbar-default {
                                 width: 100%;
                                 padding: 0;
@@ -94,11 +96,6 @@
                                 border-radius: 15px;
                                 background-color: gray;
                                 margin-top: 10px;
-                            }
-                            
-                            #page2 img {
-                                height: 260px;
-                                width: 260px;
                             }
                             
                             .my-task {
