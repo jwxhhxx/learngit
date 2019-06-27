@@ -12,5 +12,7 @@
 [时钟]( https://jwxhhxx.github.io/learngit/时钟/clock.html)  
 [轮播图]( https://jwxhhxx.github.io/learngit/day2/lunbotu.html)  
 [简易涂鸦板]( https://jwxhhxx.github.io/learngit/简易小画板/index.html)  
-[新闻网站]( https://jwxhhxx.github.io/learngit/新闻网站/index.html)  
+[新闻网站]( https://jwxhhxx.github.io/learngit/新闻网站/index.html)    
+[Vue简易计算器]( https://jwxhhxx.github.io/learngit/Vue实现简易计算器/index.html)  
+
 
