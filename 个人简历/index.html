@@ -8,7 +8,9 @@
     <title>Document</title>
 
     <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/conmen.css">
+    <link media="(min-width:500px)" rel="stylesheet" href="css/index.css">
+    <link media="(max-width:500px)" rel="stylesheet" href="css/mobile.css">
 </head>
 
 <body>
@@ -16,11 +18,11 @@
         <div class="container">
             <div class="hidden-xs">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html">首页</a></li>
-                    <li><a href="#">与我相关</a></li>
-                    <li><a href="#">技能</a></li>
-                    <li><a href="#">项目</a></li>
-                    <li><a href="#">联系我</a></li>
+                    <li><a href="#shouye">首页</a></li>
+                    <li><a href="#andme">与我相关</a></li>
+                    <li><a href="#skill">技能</a></li>
+                    <li><a href="#task">项目</a></li>
+                    <li><a href="#contact">联系我</a></li>
 
                 </ul>
             </div>
@@ -28,45 +30,30 @@
     </div>
     <div id="wrap">
         <div id="main">
+            <a name="shouye"></a>
             <div id="page1" class="page">
 
-                <div class="nav_wrap">
 
-                    <ul class="nav_bar_ul">
-                        <li>
-                            <a href="index.html"></a>
-                        </li>
-                        <li>
-                            <a href="#"></a>
-                        </li>
-                        <li>
-                            <a href="#"></a>
-                        </li>
-                        <li>
-                            <a href="#"></a>
-                        </li>
-                        <li>
-                            <a href="#"></a>
-                        </li>
-                    </ul>
-
-                </div>
 
 
                 <div class="square">
                     <div class="square-inner">
-                        <div class="square-text">
+                        <div class="square-text" id="sqt1">
                             <h1>Hello</h1>
                             <marquee width=100 behavior=scroll direction=right onmouseover="this.stop()" onmouseout="this.start()">
                                 我爱前端，前端在学中~</marquee>
+
                         </div>
+
 
                     </div>
                 </div>
 
 
             </div>
+            <a name="andme"></a>
             <div id="page2" class="page">
+
                 <div class="col-md-5">
                     <div class="img">
                         <img src="images/bw-1.png" alt="">
@@ -125,53 +112,68 @@
                     </table>
                 </div>
             </div>
+            <a name="skill"></a>
             <div id="page3" class="page">
-                <div class="center-content"></div>
-                <div class="card">
-                    <img src="images/blog-3.jpg" alt="">
-                    <h2 class="text">基本技能</h2>
-                    <div class="card-content">
-                        <ul>
-                            <li>掌握DIV+CSS布局的HTML代码编写</li>
-                            <li>了解响应式布局</li>
-                            <li>了解Javascript</li>
-                            <li>了解Css3、Html5</li>
-                        </ul>
+
+
+                <div class="center-content">
+                    <div class="card" id="card1">
+                        <img src="images/blog-3.jpg" alt="">
+                        <h2 class="text">基本技能</h2>
+                        <div class="card-content">
+                            <ul>
+                                <li>掌握DIV+CSS布局的HTML代码编写</li>
+                                <li>了解响应式布局</li>
+                                <li>了解Javascript</li>
+                                <li>了解Css3、Html5</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <img src="images/blog-4.jpg" alt="">
-                    <h2 class="text">相关框架</h2>
-                    <div class="card-content">
-                        <ul>
-                            <li>了解Bootstrap</li>
-                            <li>了解Vue.js</li>
-                        </ul>
+                    <div class="card">
+                        <img src="images/blog-4.jpg" alt="">
+                        <h2 class="text">相关框架</h2>
+                        <div class="card-content">
+                            <ul>
+                                <li>了解Bootstrap</li>
+                                <li>了解Vue.js</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <img src="images/blog-5.jpg" alt="">
-                    <h2 class="text">其他技能</h2>
-                    <div class="card-content">
-                        <ul>
-                            <li>了解git语句</li>
-                            <li>了解sql sever的使用，能够完成基本增删改查</li>
-                            <li>了解Asp.net，c++等后端语言的基础</li>
-                            <li>了解数据结构、计算机网络等基础</li>
-                            <li>有一定的自学能力，善于利用网络来学习，善于利用搜索引擎和博客</li>
-                        </ul>
+                    <div class="card">
+                        <img src="images/blog-5.jpg" alt="">
+                        <h2 class="text">其他技能</h2>
+                        <div class="card-content">
+                            <ul>
+                                <li>了解git语句</li>
+                                <li>了解sql sever的使用，能够完成基本增删改查</li>
+                                <li>了解Asp.net，c++等后端语言的基础</li>
+                                <li>了解数据结构、计算机网络等基础</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
+            <a name="task"></a>
             <div id="page4" class="page">
+
                 <div class="my-task">
                     <div class="wrap1" style="left: -800px">
                         <div class="task" id="task-one">
-                            1 </div>
-                        <div class="task" id="task-two">2</div>
-                        <div class="task" id="task-three">3</div>
-                        <div class="task" id="task-four">4</div>
-                        <div class="task" id="task-five">5</div>
+                            <img src="images/music.png" alt="" href="">
+                            <p>一个简单的播放器，通过javaScript来实现播放、切歌、调节音量等功能</p>
+                        </div>
+                        <div class="task" id="task-two"><img src="images/图片1.png" alt="">
+                            <p>一个简单的旅游网页，通过html+css来实现布局，javaScript来实现轮播图和页面切换等功能</p>
+                        </div>
+                        <div class="task" id="task-three"><img src="images/图片2.png" alt="">
+                            <p>一个简单的美食网页，用到html+css+javaScript，特色是用地图来展现当地美食</p>
+                        </div>
+                        <div class="task" id="task-four"><img src="images/caculate.png" alt="">
+                            <p>一个简易的计算器，用Vue来实现计算功能</p>
+                        </div>
+                        <div class="task" id="task-five"><img src="images/pic.png" alt="">
+                            <p> 一个简易的画板，用canvas和javaScript来实现绘画功能，可以改变画笔粗细和颜色</p>
+                        </div>
                     </div>
                     <div class="buttons ">
                         <span onmouseover="change1()"></span>
@@ -183,7 +185,27 @@
                 </div>
 
             </div>
-            <div id="page5" class="page"></div>
+            <a name="contact"></a>
+            <div id="page5" class="page">
+                <div class="page3-img"><img src="images/reza.jpg" alt=""></div>
+                <div class="box-lg">
+                    <h1> Thank You For Your Read</h1>
+                    <h2>Phone：13026209377</h2>
+                    <h2>QQ:774578034</h2>
+                    <h2>Wechat:jwx199707</h2>
+
+                </div>
+                <div class="wrap-1" id="display1">
+                    <div class="wrap-11">
+                        <div class="top"> <a href="#shouye">首页</a> </div>
+                        <div class="bottom"><a href="#andme">与我相关</a></div>
+                        <div class="left"><a href="#skill">技能</a></div>
+                        <div class="right"><a href="#task">项目</a></div>
+                        <div class="front"><a href="#contact">联系我</a></div>
+                        <div class="back">Summer</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="js/index.js"></script>

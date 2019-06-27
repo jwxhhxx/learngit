@@ -1,19 +1,19 @@
  .wrap-1 {
-     display: none;
- }
- 
- #page2 .img {
      display: block;
  }
  
+ #page2 .img {
+     display: none;
+ }
+ 
  table {
-     font-size: 20px;
+     font-size: 10px;
      font-weight: 2;
-     width: 600px;
+     width: 300px;
  }
  
  td {
-     width: 300px;
+     width: 100px;
  }
  
  tr {
@@ -21,16 +21,18 @@
  }
  
  .card {
-     width: 28%;
-     height: 500px;
+     width: 80%;
+     height: 200px;
      background-color: white;
-     float: left;
-     margin-top: 100px;
-     margin-left: 50px;
+     margin: auto;
+ }
+ 
+ #card1 {
+     margin-top: 70px;
  }
  
  .center-content {
-     margin: auto;
+     font-size: 10px;
  }
  
  .card:hover {
@@ -40,9 +42,9 @@
  
  .card img {
      display: block;
-     width: 150px;
-     height: 150px;
-     border-radius: 150px;
+     width: 70px;
+     height: 70px;
+     border-radius: 70px;
      margin: auto;
      margin-top: 30px;
  }
@@ -51,16 +53,19 @@
      text-align: center;
  }
  
+ .card h2 {
+     font-size: 18px;
+ }
+ 
  .card li {
      text-decoration: none;
      list-style: none;
-     margin-bottom: 20px;
  }
  
  .buttons {
      position: absolute;
-     right: 550px;
-     bottom: 750px;
+     right: 80px;
+     bottom: 900px;
      width: 200px;
      height: 10px;
      /*z-index是堆叠顺序*/
@@ -68,17 +73,17 @@
  }
  
  .box-lg {
+     position: absolute;
      height: 400px;
-     width: 500px;
-     float: left;
+     width: 400px;
      margin-top: 100px;
+ }
+ 
+ .page3-img {
+     position: relative;
  }
  
  .box-lg h1,
  .box-lg h2 {
      text-align: center;
- }
- 
- .page3-img {
-     float: left;
  }

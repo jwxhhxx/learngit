@@ -15,6 +15,7 @@ if (navigator.userAgent.toLowerCase().indexOf("firefox") != -1) {
 } else {
     document.onmousewheel = scrollFun;
 }
+
 var startTime = 0;
 var endTime = 0;
 var now = 0;
@@ -33,9 +34,9 @@ function scrollFun(e) {
             main.style.top = now + "px";
             endTime = new Date().getTime();
         }
-    } else {
-        event.preventDefault();
-    }
+    } //else {
+    //     event.preventDefault();
+    // }
 }
 
 function change1() {
