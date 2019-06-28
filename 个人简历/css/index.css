@@ -66,7 +66,7 @@
  .buttons {
      position: absolute;
      left: 45%;
-     bottom: 750px;
+     bottom: 23%;
      width: 200px;
      height: 10px;
      /*z-index是堆叠顺序*/
@@ -87,4 +87,49 @@
  
  .page3-img {
      float: left;
+ }
+ 
+ .task {
+     padding-top: 50px;
+     width: 400px;
+     height: 400px;
+     border-radius: 400px;
+     float: left;
+ }
+ 
+ .my-task {
+     width: 400px;
+     height: 400px;
+     background-color: #ccc;
+     border-radius: 400px;
+     margin: auto;
+     overflow: hidden;
+     box-shadow: 10px 10px 10px #888888;
+ }
+ 
+ .square {
+     height: 350px;
+     width: 350px;
+     border: 1px white double;
+     border-collapse: separate;
+     margin: 0 auto;
+     padding: 15px 15px;
+ }
+ 
+ .square:hover {
+     transform: scale(1.2);
+     transition: 2s;
+ }
+ 
+ .square-inner {
+     height: 320px;
+     width: 2;
+     background-color: white;
+     opacity: 0.5;
+     position: relative;
+ }
+ 
+ .square-text {
+     position: absolute;
+     margin: 100px 120px;
  }
