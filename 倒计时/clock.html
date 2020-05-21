@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Neon Text</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            background-color: black;
+            background-size: cover;
+        }
+
+        .neon-wrap {
+            width: 100vw;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .neon-text {
+            font-family: DS;
+            font-size: 50px;
+            color: #bbdefb;
+            text-shadow: -3px 0px 5px #bbdefb, 0px 0px 2px #bbdefb;
+        }
+
+        .neon-blink {
+            animation: neon 4s infinite;
+        }
+
+        .neon-clock {
+            font-family: DS;
+            font-size: 80px;
+            color: #FFEB3B;
+            text-shadow: -3px 0px 5px #FFEB3B, 0px 0px 2px #FFEB3B;
+        }
+
+        .neon-by {
+            color: #bbdefb;
+            text-shadow: -3px 0px 5px #bbdefb, 0px 0px 2px #bbdefb;
+        }
+
+        @keyframes neon {
+
+            0%,
+            30%,
+            32%,
+            34% {
+                color: #222;
+                text-shadow: -3px 0px 5px #222, 0px 0px 2px #222;
+            }
+
+            31%,
+            33%,
+            35%,
+            75% {
+                color: #bbdefb;
+                text-shadow: -3px 0px 5px #bbdefb, 0px 0px 2px #bbdefb;
+            }
+        }
+
+        @font-face {
+            font-family: DS;
+            /*为引入的字体命名*/
+            src: url(font/DS-DIGIT.TTF);
+            /*定义要引入字体文件的路径*/
+        }
+
+        /* 如何调用网络上下载的字体 */
+    </style>
+</head>
+
+<body onload="resetTime(600)">
+    <div class="neon-wrap">
+        <div class="neon-text">
+            <span class="neon-blink">C</span> L<span class="neon-blink">O</span>C<span class="neon-blink">K</span>
+        </div>
+        <div class="neon-clock">
+            <span id="timer-menite" class="timer-num"></span>
+            <span class="timer-sep">:</span>
+            <span id="timer-second" class="timer-num"></span>
+        </div>
+        <div class="neon-by">by @Summer</div>
+    </div>
+    <script>
+        function resetTime(time) {
+            var timer = null;
+            var timespan2 = document.getElementById("timer-menite");
+            var timespan3 = document.getElementById("timer-second");
+            var t = time;
+            var m = 0;
+            var s = 0;
+            m = Math.floor(t / 60 % 60);
+            m < 10 && (m = '0' + m);
+            s = Math.floor(t % 60);
+
+            function countDown() {
+                s--;
+                s < 10 && (s = '0' + s);
+                if (s.length >= 3) {
+                    s = 59;
+                    m = "0" + (Number(m) - 1);
+                }
+                if (m.length >= 3) {
+                    m = '00';
+                    s = '00';
+                    clearInterval(timer);
+                }
+                console.log(m + "分钟" + s + "秒");
+                timespan2.innerHTML = m;
+                timespan3.innerHTML = s;
+            }
+
+            timer = setInterval(countDown, 1000);
+        }
+
+        // function start() {
+        //     window.setInterval("displayTime()", 1000) //单位是毫秒
+        // }
+    </script>
+
+</html>
