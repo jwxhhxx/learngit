@@ -17,6 +17,7 @@
 [个人简历]( https://jwxhhxx.github.io/learngit/个人简历/index.html)  
 [待办事项]( https://jwxhhxx.github.io/learngit/MYtodolist/index.html) 
 [倒计时]( https://jwxhhxx.github.io/learngit/倒计时/clock.html) 
+[小说灵感提取器]( https://jwxhhxx.github.io/learngit/小说灵感提取器/index.html) 
 
 
 
