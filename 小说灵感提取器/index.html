@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小说灵感生成器</title>
+</head>
+
+<body>
+  <div style="display: flex;align-items: center;justify-content: center;flex-direction: column;"> <img id="pic_img"
+      style="width: 400px;" src="./static/1.png" alt="">
+    <div id="answer"></div>
+    <button onclick="openClick()" class="start" id="start">开始</button>
+  </div>
+  <script>
+    let image = document.getElementById("pic_img");
+    const imageList = ['./static/1.png', './static/2.png', './static/3.png', './static/4.png', './static/5.png', './static/6.png', './static/7.png', './static/8.png', './static/9.png', './static/10.png', './static/11.png', './static/12.png', './static/13.png', './static/14.png', './static/15.png', './static/16.png', './static/17.png']
+    const ticai = [
+      "言情", "悬疑", "惊悚", "科幻", "武侠", "权谋", "修仙", "红楼", "古代", "现代",
+      "历史", "未来", "架空", "末日", "民国", "姐弟恋", "白月光", "女配", "替身", "病娇",
+      "青梅竹马", "豪门霸总", "女神", "女明星", "女王", "赘婿", "风水道士", "医生", "警察", "律师",
+      "法医", "真假千金", "动物主角", "学霸", "太子爷", "校霸", "出轨", "婚姻", "家庭", "校园",
+      "职场", "娱乐圈", "重生", "穿越", "犯罪", "无限流", "丧尸", "平行时空", "人工智能", "游戏",
+      "艳遇", "西游", "金手指", "超能力", "系统", "穿书", "玄学", "规则怪谈", "团宠", "HE",
+      "BE", "囤物资", "girls help girls", "原生家庭", "甜宠", "虐恋", "暗恋", "先婚后爱", "先虐后甜", "追妻火葬场",
+      "破镜重圆", "全息网游", "沙雕", "求生", "治愈", "打脸", "历史", "美食", "抗战谍战", "神医",
+      "萌宝", "年代", "鉴宝", "直播", "逃荒", "综艺", "双重生", "相爱相杀", "掉马甲", "破案",
+      "逃婚", "一见钟情", "契约婚姻", "隐婚", "今穿古", "古穿今", "女扮男装", "聊天群", "大秦", "三国",
+      "兽世", "清穿", "洪荒"]
+    const novalList = ['']
+    function sleep (ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    async function openClick () {
+      document.getElementById('answer').innerHTML = ""
+      document.getElementById('answer').style.display = 'none'
+      document.getElementById('start').disabled = true
+      for (let i = 0; i < imageList.length - 1; i++) {
+        document.getElementById('pic_img').setAttribute("src", imageList[i])
+        await sleep(300)
+      }
+      const number = Math.floor(Math.random() * (5 - 2)) + 2;
+      console.log(number);
+      var randomNums = [];
+      while (randomNums.length < number) {
+        var randomIndex = Math.floor(Math.random() * ticai.length);
+        var num = ticai.splice(randomIndex, 1)[0];
+        randomNums.push(num);
+      }
+      document.getElementById('answer').innerHTML = randomNums
+      document.getElementById('answer').style.display = 'block'
+      document.getElementById('answer').style.background = 'white'
+      document.getElementById('answer').style.padding = '50px'
+      document.getElementById('answer').style.position = 'absolute'
+      document.getElementById('start').disabled = false
+      console.log(randomNums);
+    }
+  </script>
+</body>
+
+</html>
+<style>
+  .start {
+    background: #f29572;
+    border: none;
+    color: white;
+    padding: 10px;
+    width: 100px;
+    margin-top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+</style>
